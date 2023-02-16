@@ -1,0 +1,35 @@
+#main {
+    background-color: cadetblue;
+    height: 95vh;
+    width: 75vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#main > * {
+    border: 1px solid black;
+}
+
+.display {
+    width: 75vh;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    height: 85vh;
+    width: 75vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.buttons button {
+    max-height: 13vh;
+    min-width: 33.333%;
+    border-radius: 250px;
+    font-weight: bold;
+    font-size: 5vh;
+}
