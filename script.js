@@ -1,4 +1,6 @@
-let userInput;
+let value1;
+let value2;
+let solution;
 
 const add = (...args) => {
     let sum = 0;
@@ -46,6 +48,8 @@ function operate(operator, num1, num2) {
     return result;
 }
 
+let userInput;
+
 function getInput(clicked_id) {
     userInput = clicked_id.innerText;
 }
@@ -53,6 +57,7 @@ function getInput(clicked_id) {
 function addButtonFunction() {
     const btns = Array.from(document.querySelectorAll('.buttons button'));
     const result = document.getElementById("values");
+    result.style.fontSize = "5vh";
     for (const button of btns) {
         button.addEventListener('click', () => {
             getInput(button);
