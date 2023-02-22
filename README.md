@@ -1,2 +1,2 @@
 # odin-calculator
-Odin Project Calculator - INCOMPLETE
+Odin Project Calculator - COMPLETE
