@@ -9,19 +9,19 @@ const add = (...args) => {
     total = args.reduce((accumul, argument) => {
         return accumul + argument;
     }, 0);
-    mainDisplay.value = total.toFixed(2);
+    mainDisplay.value = total;
 }
 const subtract = (a, ...args) => {
     total = args.reduce((accumul, argument) => {
         return accumul - argument;
     }, a);
-    mainDisplay.value = total.toFixed(2);
+    mainDisplay.value = total;
 }
 const multiply = (...args) => {
     total = args.reduce((accumul, argument) => {
         return accumul * argument;
     }, 1);
-    mainDisplay.value = total.toFixed(2);
+    mainDisplay.value = total;
 }
 const divide = (a, ...args) => {
     total = args.reduce((accumul, argument) => {
@@ -32,15 +32,15 @@ const divide = (a, ...args) => {
         mainDisplay.value = "CAN'T DO IT!!!";
     }
     else {
-        mainDisplay.value = total.toFixed(2);
+        mainDisplay.value = total;
     }
  
 }
 const exponent = (a, b) => {
-    mainDisplay.value = (a ** b).toFixed(2);
+    mainDisplay.value = a ** b);
 }
 const modulo = (a, b) => {
-    mainDisplay.value = (a % b).toFixed(2);
+    mainDisplay.value = a % b;
 }
 let solutionCounter = 0; // to let operator buttons work again after we give solution
 const operate = (operator, a, b) => {
