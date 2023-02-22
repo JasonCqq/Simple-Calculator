@@ -93,7 +93,7 @@ const mainCalculatorFunction = () => {
             }
 
             if (mainDisplay.value !== undefined && operatorCount !== 1){
-                value1 = parseFloat(mainDisplay.value);
+                value1 = parseInt(mainDisplay.value);
                 console.log(value1);
                 currentOperator = btns.innerText;
                 mainDisplay.value += currentOperator;
@@ -105,7 +105,7 @@ const mainCalculatorFunction = () => {
     equalButton.addEventListener("click", () => {
         const tempArray = Array.from(String(mainDisplay.value), Number)
         value2 = tempArray.slice(String(value1).length + 1).join('');
-        operate(currentOperator, value1, parseFloat(value2));
+        operate(currentOperator, value1, parseInt(value2));
     },)
 
     clearButton.addEventListener("click", () => {
