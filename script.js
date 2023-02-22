@@ -24,29 +24,51 @@ const multiply = (...args) => {
     mainDisplay.value = total;
 }
 const divide = (a, ...args) => {
-    if (args === 0){
-        mainDisplay.value = "ERROR";
-    } else {
-        total = args.reduce((accumul, argument) => {
-            return accumul / argument;
-        }, a);
+    total = args.reduce((accumul, argument) => {
+        return accumul / argument;
+    }, a);
+
+    if(total === Infinity){
+        mainDisplay.value = "CAN'T DO IT!!!";
+    }
+    else {
         mainDisplay.value = total;
     }
+ 
+}
+const exponent = (a, b) => {
+    mainDisplay.value = a ** b;
+}
+const modulo = (a, b) => {
+    mainDisplay.value = a % b;
 }
 
+let solutionCounter = 0; // to let operator buttons work again after we give solution
 const operate = (operator, a, b) => {
     switch (operator) {
         case "+":
             add(a, b);
+            solutionCounter++;
             break;
         case "-":
             subtract(a, b);
+            solutionCounter++;
             break;
         case "×":
             multiply(a, b);
+            solutionCounter++;
             break;
         case "÷":
             divide(a, b);
+            solutionCounter++;
+            break;
+        case "^":
+            exponent(a, b);
+            solutionCounter++;
+            break;
+        case "%":
+            modulo(a, b);
+            solutionCounter++;
             break;
     }
 }
@@ -65,6 +87,11 @@ const mainCalculatorFunction = () => {
 
     for (const btns of operatorButton) {
         btns.addEventListener("click", () => {
+            if (solutionCounter === 1) {
+                operatorCount--;
+                solutionCounter--;
+            }
+
             if (mainDisplay.value !== undefined && operatorCount !== 1){
                 value1 = parseInt(mainDisplay.value);
                 console.log(value1);
