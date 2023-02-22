@@ -6,6 +6,14 @@ body {
     background-color: #FDF7E2;
 }
 
+#note {
+    background-color: #c6ccca;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-align: center;
+    height: 3vh;
+}
+
 #calculator {
     background-color: #c6ccca;
     height: 65vh;
