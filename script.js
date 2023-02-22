@@ -9,19 +9,19 @@ const add = (...args) => {
     total = args.reduce((accumul, argument) => {
         return accumul + argument;
     }, 0);
-    mainDisplay.value = total;
+    mainDisplay.value = total.toFixed(2);
 }
 const subtract = (a, ...args) => {
     total = args.reduce((accumul, argument) => {
         return accumul - argument;
     }, a);
-    mainDisplay.value = total;
+    mainDisplay.value = total.toFixed(2);
 }
 const multiply = (...args) => {
     total = args.reduce((accumul, argument) => {
         return accumul * argument;
     }, 1);
-    mainDisplay.value = total;
+    mainDisplay.value = total.toFixed(2);
 }
 const divide = (a, ...args) => {
     total = args.reduce((accumul, argument) => {
@@ -32,17 +32,16 @@ const divide = (a, ...args) => {
         mainDisplay.value = "CAN'T DO IT!!!";
     }
     else {
-        mainDisplay.value = total;
+        mainDisplay.value = total.toFixed(2);
     }
  
 }
 const exponent = (a, b) => {
-    mainDisplay.value = a ** b;
+    mainDisplay.value = (a ** b).toFixed(2);
 }
 const modulo = (a, b) => {
-    mainDisplay.value = a % b;
+    mainDisplay.value = (a % b).toFixed(2);
 }
-
 let solutionCounter = 0; // to let operator buttons work again after we give solution
 const operate = (operator, a, b) => {
     switch (operator) {
@@ -87,13 +86,14 @@ const mainCalculatorFunction = () => {
 
     for (const btns of operatorButton) {
         btns.addEventListener("click", () => {
+            
             if (solutionCounter === 1) {
                 operatorCount--;
                 solutionCounter--;
             }
 
             if (mainDisplay.value !== undefined && operatorCount !== 1){
-                value1 = parseInt(mainDisplay.value);
+                value1 = parseFloat(mainDisplay.value);
                 console.log(value1);
                 currentOperator = btns.innerText;
                 mainDisplay.value += currentOperator;
@@ -105,7 +105,7 @@ const mainCalculatorFunction = () => {
     equalButton.addEventListener("click", () => {
         const tempArray = Array.from(String(mainDisplay.value), Number)
         value2 = tempArray.slice(String(value1).length + 1).join('');
-        operate(currentOperator, value1, parseInt(value2));
+        operate(currentOperator, value1, parseFloat(value2));
     },)
 
     clearButton.addEventListener("click", () => {
