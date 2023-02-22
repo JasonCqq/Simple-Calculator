@@ -37,7 +37,7 @@ const divide = (a, ...args) => {
  
 }
 const exponent = (a, b) => {
-    mainDisplay.value = a ** b);
+    mainDisplay.value = a ** b;
 }
 const modulo = (a, b) => {
     mainDisplay.value = a % b;
