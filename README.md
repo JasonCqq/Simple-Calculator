@@ -1,3 +1,5 @@
 # odin-calculator
-Odin Project Calculator - COMPLETE
+https://jason21715.github.io/odin-calculator/
+Odin Project Calculator
+
 
